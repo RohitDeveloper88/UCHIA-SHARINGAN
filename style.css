@@ -1,0 +1,230 @@
+
+body{
+    background: url(itachi.jpg);
+    background-size: cover;
+    height: 100vh;
+}
+
+
+
+
+:root {
+    --color-main: rgb(182, 0, 0);
+}
+
+.eyeball {
+    position: relative;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.eyeball{
+    margin-right: 600px;
+}
+
+.part1 {
+    position: relative;
+    width: 400px;
+    height: 400px;
+    background-color: var(--color-main);
+    border: 7px solid black;
+    border-radius: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: inset 0px 0px 10px;
+}
+
+.pupil-main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
+}
+
+.pupil-main::before {
+    content: '';
+    position: absolute;
+    width: 250px;
+    height: 250px;
+    border-radius: 100%;
+    box-shadow: inset 0px 0px 4px black;
+    opacity: 0.5;
+}
+
+.pupil-main::after {
+    content: '';
+    position: absolute;
+    width: 0px; /* Adjust the width as needed */
+    height: 0px; /* Adjust the height as needed */
+    border: 30px solid black;
+    border-radius: 100%; /* Make it a circle */
+    background-color: var(--color-main); /* Set background color */
+    animation: pupil-main 5s forwards;
+    animation-delay: 8s;
+}
+
+.pupil-sud {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    z-index: 4;
+    width: 250px;
+    height: 250px;
+    border-radius: 100%;
+    background-color: transparent;
+    animation: pupil-1 5s forwards;
+}
+
+.pupil-sud::before {
+    position: absolute;
+    content: '';
+    width: 50px;
+    height: 40px;
+    background-color: black;
+    border-radius: 100% 0px 0px 0px;
+    margin-top: -45px;
+    margin-left: -21px;
+    animation: pupil-sud-1 5s forwards;
+    animation-delay: 8s;
+}
+
+.hi{
+    height: 400px;
+    width: 400px;
+}
+
+.eyeball img {
+    
+    animation: rotateAnimation 6s linear 2; /* Adjust duration as needed */
+}
+
+@keyframes rotateAnimation {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.pupil-sud::after{
+    position: absolute;
+    content: '';
+    width: 71px;
+    height: 71px;
+    background-color: var(--color-main);
+    border-radius: 100% 0px 0px 100%;
+    transform: skewY(14deg);
+    margin-left: 55px;
+    margin-top: -44px;
+    clip-path: polygon(0 0, 35% 0, 35% 100%, 0 100%);
+    animation: pupil-sud-2 5s forwards;
+    animation-delay: 8s;
+}
+
+#pupil {
+    content: '';
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    border-radius: 50px;
+    margin-left: -21px;
+    margin-top: -25px;
+    background-color: black;
+    z-index: 1;
+    animation: pupil 4s forwards;
+    animation-delay: 8s;
+}
+
+.pupil-sud:nth-child(2){
+    animation: pupil-2 0s forwards;
+    animation-delay: 1s;
+    opacity: 0;
+    transform: rotate(120deg);
+    z-index: 5;
+}
+.pupil-sud:nth-child(3){
+    animation: pupil-3 0s forwards;
+    animation-delay: 2s;
+    opacity: 0;
+    transform: rotate(240deg);
+    z-index: 6;
+}
+
+
+
+@keyframes pupil-1{
+    100%{
+        transform: rotate(360deg);
+        z-index: 0;
+    }
+}
+
+@keyframes pupil-2{
+    100%{
+        opacity: 1;
+        z-index: 0;
+    }
+}
+
+@keyframes pupil-3{
+    100%{
+        opacity: 1;
+        z-index: 0;
+    }
+}
+
+
+
+@keyframes pupil-main 
+{
+    100%{
+        width: 60px;
+        height: 60px;
+        border: 30px solid black;
+    }
+}
+
+@keyframes pupil-sud-1
+{
+    100%{
+       width: 121px;
+       height: 200px;
+       border-radius: 100% 0px 0px 0px;
+       margin-top: -70px;
+       margin-left: 0px;
+       z-index: 1;
+    }
+}
+
+@keyframes pupil-sud-2 
+{
+    100%{
+        width: 160px;
+        height: 164px;
+        border-radius: 100% 0px 0px 100%;
+        transform: skewY(14deg);
+        margin-left: 175px;
+        margin-top: -60px;
+        clip-path: polygon(0 0, 35% 0, 35% 100%, 0 100%);
+        z-index: 2;
+    }
+}
+
+@keyframes pupil 
+{
+    100%{
+        width: 115px;
+        height: 115px;
+        margin-top: 50px;
+        margin-left: -1px;
+        z-index: 0;
+    }
+}
+
+
+
+
